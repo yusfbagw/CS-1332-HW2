@@ -207,7 +207,18 @@ public class ExternalChainingHashMap<K, V> {
      * @throws java.lang.IllegalArgumentException if key is null
      */
     public boolean containsKey(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("The key can't be null.");
+        }
 
+        int index = Math.abs(key.hashCode() % table.length);
+        ExternalChainingMapEntry<K, V> curr = table[index]; 
+
+        while (curr != null) {
+            if (curr.getKey().equals(key))) {
+                
+            }
+        }
     }
 
     /**
